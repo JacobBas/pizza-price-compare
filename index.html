@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="/index.css" />
+    </head>
+    <body>
+        <h1>Pizza Price vs. Size Comparison Calculator</h1>
+        <p>
+            Use this calulator to get the most bang for your buck when buying pizzas! 
+            This application uses some simple math to calculate just how much pizza you 
+            are getting for your money.
+        </p>
+
+        <hr>
+
+        <section>
+            Select your currency and units of measure below:
+            <div>
+                <label for="currency">Currency: </label>
+                <select id="currency_selector" name="currency"></select>
+            </div>
+
+            <div>
+                <label for="unit">Unit of Measure: </label>
+                <select id="unit_selector" name="unit"></select>
+            </div>
+        </section>
+
+        <hr>
+
+        <section name="parameters">
+            <div class="price-per-unit-calc">
+                <p class="option-name">Option 1</p>
+                <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): <label>
+                <input name="diameter" type="number" min="1" value="16">
+            
+                <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                <input name="price" type="number" min="1" value="15.99">
+
+                <br>
+
+                <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                <output name="unit-per-currency">...</output>
+            </div>
+
+            <div class="price-per-unit-calc">
+                <p class="option-name">Option 2</p>
+                <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): <label>
+                <input name="diameter" type="number" min="1" value="10">
+            
+                <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                <input name="price" type="number" min="1" value="9.99">
+
+                <br>
+
+                <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                <output name="unit-per-currency">...</output>
+            </div>
+
+            <div class="price-per-unit-calc">
+                <p class="option-name">Option 3</p>
+                <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): <label>
+                <input name="diameter" type="number" min="1" value="6">
+            
+                <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                <input name="price" type="number" min="1" value="5.99">
+
+                <br>
+
+                <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                <output name="unit-per-currency">...</output>
+            </div>
+            <br>
+            <button id="calculate-button">Calculate!</button>
+        </section>
+
+        <br>
+
+        <section name="results">
+            <p id="results-message"> Please calulate some options to view the results...</p>
+
+            <table id="results-table">
+                <tr>
+                    <th>Alternate Option</th>
+                    <th>Percent More Pizza</th>
+                </tr>
+            </table>
+
+        </section>
+
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>
