@@ -1,71 +1,116 @@
 <!DOCTYPE html>
     <head>
+        <!-- pure.css stylesheet template: https://purecss.io/-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" href="index.css" />
-
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-        </style>
     </head>
     <body>
-        <h1>Pizza Price vs. Size Comparison Calculator</h1>
-        <p>
-            Use this calulator to get the most bang for your buck when buying pizzas! 
-            This application uses some simple math to calculate just how much pizza you 
-            are getting for your money.
-        </p>
+        <div class="header">
+            <h1>Pizza Price vs. Size Comparison Calculator</h1>
+            <p>
+                Use this calulator to get the most bang for your buck when buying pizzas! 
+                This application uses some simple math to calculate just how much pizza you 
+                are getting for your money.
+            </p>
+        </div>
 
-        <hr>
+        <div class="content">
+            <section>
+                Select your currency and units of measure (doesn't actually affect the calculation):
+                <form class="pure-form pure-form-aligned">
+                    <fieldset>
+                        <div class="pure-control-group">
+                            <label for="currency">Currency: </label>
+                            <select id="currency_selector" name="currency"></select>
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="unit">Unit of Measure: </label>
+                            <select id="unit_selector" name="unit"></select>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
 
-        <section>
-            Select your currency and units of measure (doesn't actually affect the calculation):
-            <table>
-                <tr>
-                    <td><label for="currency">Currency: </label></td>
-                    <td><select id="currency_selector" name="currency"></select></td>
-                </tr>
-                <tr>
-                    <td><label for="unit">Unit of Measure: </label></td>
-                    <td><select id="unit_selector" name="unit"></select></td>
-                </tr>
-            </table>
-        </section>
+            <hr>
 
-        <hr>
+            <section name="parameters">
+                <form class="pure-form pure-form-aligned">
+                    <fieldset class="price-per-unit-calc">
+                        <p class="option-name">Option 1</p>
+                        <div class="pure-control-group">
+                            <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): </label>
+                            <input name="diameter" type="number" min="1" value="16">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                            <input name="price" type="number" min="1" value="15.99">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                            <output name="unit-per-currency">...</output>
+                        </div>
+                    </fieldset>
 
-        <section name="parameters">
-            <div class="price-per-unit-calc">
-                <p class="option-name">Option 3</p>
-                <table>
-                    <tr class="input-row">
-                        <td><label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): <label></label></td>
-                        <td><input name="diameter" type="number" min="1" value="16"></td>
-                    </tr>
-                    <tr class="input-row">
-                        <td><label for="price">Price (<span class="currency-symbol"></span>): </label></td>
-                        <td><input name="price" type="number" min="1" value="15.99"></td>
-                    </tr>
-                    <tr class="output-row">
-                        <td><label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label></td>
-                        <td><output name="unit-per-currency">...</output></td>
-                    </tr>
-                </table>
-            </div>
-            
+                    <fieldset class="price-per-unit-calc">
+                        <p class="option-name">Option 2</p>
+                        <div class="pure-control-group">
+                            <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): </label>
+                            <input name="diameter" type="number" min="1" value="16">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                            <input name="price" type="number" min="1" value="15.99">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                            <output name="unit-per-currency">...</output>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="price-per-unit-calc">
+                        <p class="option-name">Option 3</p>
+                        <div class="pure-control-group">
+                            <label for="diameter">Size/Diameter (<span class="unit-symbol"></span>): </label>
+                            <input name="diameter" type="number" min="1" value="16">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="price">Price (<span class="currency-symbol"></span>): </label>
+                            <input name="price" type="number" min="1" value="15.99">
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="unit-per-currency"> Pizza per <span class="currency-symbol"></span>1.00:  </label>
+                            <output name="unit-per-currency">...</output>
+                        </div>
+                    </fieldset>
+
+                    <div class="pure-controls">
+                        <button id="calculate-button" class="pure-button pure-button-primary">Calculate!</button>
+                    </div>
+
+                </form>
+                
+                <br>
+
+            </section>
+
             <br>
-            <button id="calculate-button">Calculate!</button>
-        </section>
 
-        <br>
+            <section name="results">
+                <p id="results-message"> Please calulate some options to view the results...</p>
+                <table id="results-table" class="pure-table">
+                    <thead>
+                        <tr>
+                            <th>Alternate Option</th>
+                            <th>Percent More Pizza</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
 
-        <section name="results">
-            <p id="results-message"> Please calulate some options to view the results...</p>
-            <table id="results-table">
-                <tr>
-                    <th>Alternate Option</th>
-                    <th>Percent More Pizza</th>
-                </tr>
-            </table>
-        </section>
 
         <script type="module" src="index.js"></script>
     </body>

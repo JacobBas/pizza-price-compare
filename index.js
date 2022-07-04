@@ -94,7 +94,9 @@ const aggregate_results = () => {
   let results_message = document.getElementById("results-message");
   results_message.innerHTML = `To get the most pizza for your money, ${best_option.name} is the best option! `;
 
-  let results_table = document.getElementById("results-table");
+  let results_table = document
+    .getElementById("results-table")
+    .getElementsByTagName("tbody")[0];
   // deleting all old rows
   while (results_table.rows.length > 1) {
     results_table.deleteRow(1);
@@ -103,7 +105,7 @@ const aggregate_results = () => {
   Object.keys(results[best_option.name].compare).forEach((key) => {
     if (key === best_option.name) {
     } else {
-      let row = results_table.insertRow(1);
+      let row = results_table.insertRow();
       let cell1 = row.insertCell(0);
       let cell2 = row.insertCell(1);
       cell1.innerText = key;
