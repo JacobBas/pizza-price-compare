@@ -63,11 +63,11 @@ export const currencies = [
     abbreviation: "BOB",
     symbol: "$b",
   },
-  {
-    currency: "Bosnia and Herzegovina Convertible Marka",
-    abbreviation: "BAM",
-    symbol: "KM",
-  },
+  // {
+  //   currency: "Bosnia and Herzegovina Convertible Marka",
+  //   abbreviation: "BAM",
+  //   symbol: "KM",
+  // },
   {
     currency: "Botswana Pula",
     abbreviation: "BWP",
@@ -173,11 +173,11 @@ export const currencies = [
     abbreviation: "EUR",
     symbol: "€",
   },
-  {
-    currency: "Falkland Islands (Malvinas) Pound",
-    abbreviation: "FKP",
-    symbol: "£",
-  },
+  // {
+  //   currency: "Falkland Islands (Malvinas) Pound",
+  //   abbreviation: "FKP",
+  //   symbol: "£",
+  // },
   {
     currency: "Fiji Dollar",
     abbreviation: "FJD",
