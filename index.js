@@ -98,9 +98,10 @@ const aggregate_results = () => {
     .getElementById("results-table")
     .getElementsByTagName("tbody")[0];
   // deleting all old rows
-  while (results_table.rows.length > 1) {
-    results_table.deleteRow(1);
+  while (results_table.rows.length > 0) {
+    results_table.deleteRow(0);
   }
+
   // repopulating the table with the new values
   Object.keys(results[best_option.name].compare).forEach((key) => {
     if (key === best_option.name) {
