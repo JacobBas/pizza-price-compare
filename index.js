@@ -92,7 +92,7 @@ const aggregate_results = () => {
 
   // displaying the resulting data within a table
   let results_message = document.getElementById("results-message");
-  results_message.innerHTML = `To get the most pizza for your money ${best_option.name} is the best option! `;
+  results_message.innerHTML = `To get the most pizza for your money, ${best_option.name} is the best option! `;
 
   let results_table = document.getElementById("results-table");
   // deleting all old rows
